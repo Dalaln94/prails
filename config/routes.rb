@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :items
+
   resources :products, only: [:index]
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
@@ -70,7 +72,7 @@ Rails.application.routes.draw do
   #get '/signin', :to => 'sessions#new' #, :as => :signin
   #get '/signout' => 'sessions#destroy', :as => :signout
   #
-  get '/search' => 'restaurants#search', :as => :search
+  get '/search' => 'items#search', :as => :search
 
 
   # The priority is based upon order of creation: first created -> highest priority.

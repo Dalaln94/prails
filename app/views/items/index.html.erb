@@ -1,0 +1,44 @@
+<h1>Listing items</h1>
+
+<head>
+  <title>Simple Search Form</title>
+</head>
+<body>
+<%= form_tag(items_path, :method => "get", :class => "navbar-form", :id => "search-form") do %>
+    <div class="input-append">
+      <%= text_field_tag :search, params[:search], :class => "span2", :placeholder => "Search ITEMS" %>
+
+      <input type="submit" id="search" value="Search"/>
+    </div>
+<% end %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Cateogyr</th>
+      <th>Manufacturer</th>
+      <th>Picture</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.cateogyr %></td>
+        <td><%= item.manufacturer %></td>
+        <td><%= item.picture %></td>
+        <td><%= item.name %></td>
+        <td><%= link_to 'Show', item %></td>
+        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item', new_item_path %>

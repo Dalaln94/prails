@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cateogyr: MyString
+  manufacturer: MyString
+  picture: MyString
+  name: MyString
+
+two:
+  cateogyr: MyString
+  manufacturer: MyString
+  picture: MyString
+  name: MyString

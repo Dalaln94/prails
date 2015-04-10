@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>E7jizli</title>
+  <title>DALAL'S STORE</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag "application" %>
 
-
+<h1> DALAL'S STORE </h1>
 
   <%= stylesheet_link_tag "simple-sidebar" %>
   <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/themes/base/jquery-ui.css", "application", :media => "all" %>
@@ -34,13 +34,7 @@
 <!-- Sidebar -->
 <header>
   <% if signed_in? %>
-      <div id="social">
-        <a href="https://twitter.com/Dalnasrallah" target="_blank">
-          <div class="twitter-hover social-slide"></div>
-        </a>
-        </a>
-        <div class="facebook-hover social-slide"></div>
-        <div class="instagram-hover social-slide"></div>
+    
 
         <div>
 
@@ -57,19 +51,7 @@
         </div>
       </div>
   <% else %>
-      <div id="social">
-        <a href="https://twitter.com" target="_blank">
-          <div class="twitter-hover social-slide"></div>
-        </a>
-        </a>
-        <div class="facebook-hover social-slide"></div>
-        <div class="instagram-hover social-slide"></div>
-        <div
-        class="fb-like"
-        data-share="true"
-        data-width="450"
-        data-show-faces="true">
-        </div>
+  
         <div>
           <form METHOD="LINK" ACTION="/signin">
             <INPUT TYPE="submit" VALUE="Sign In"/>
@@ -94,15 +76,15 @@
         </li>
 
         <li>
-          <a href="/restaurants/">Restaurants</a>
+          <a href="/items/">ITEMS</a>
           <ul class="sub-menu"></ul>
         </li>
    
         <% if @current_user.present? %>
             <% if @current_user.admin? %>
                 <li>
-                  <%= link_to 'New Restaurant', new_restaurant_path %>
-                  <%= link_to 'New Home Catering', new_catering_path %>
+                  <%= link_to 'New Item', new_item_path %>
+                  <%= link_to 'Customers Details', users_path %>
                 </li>
             <% end %>
         <% end %>
@@ -127,14 +109,13 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-6">
-        <h1><%= link_to "My Store", root_path %></h1>
       </div>
       <div class="col-xs-6 text-right">
         <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
       </div>
     </div>
     <hr>
-    <%= yield %>
+   
   </div>
 
 

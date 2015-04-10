@@ -55,16 +55,18 @@
     </div>
 
     <div class="field">
-      <%= f.label :number %>
+      <%= f.label :address %>
       <br>
       <%= f.text_field :number %>
     </div>
-    <label>Enter Numbers As Shown to confirm you're not a ROBOT:</label>
-    <input type="text" id="txtCaptcha" style="background-image:url(/assets/images/cap.JPG); text-align:center; border:none; font-weight: bold; font-family:Modern"/>
-    <input type="button" id="btnrefresh" value="Refresh" onclick="DrawCaptcha();"/>
-    <input type="text" oninput="check();" required id="txtInput"/>
-    <div class="field">
-      <input id="tc_Check" name="tcCheck" type="checkbox"/> Accept <a href="javascript:popup()">Terms and Conditions</a>
+	
+	
+	   <div class="field">
+      <%= f.label :paymentMethod %>
+      <br>
+      <%= f.select :moneyinfo_id, ["Visa", "Debit Card", "Master Card"] %>
+    </div>
+	
 
 
       <%= f.submit "Sign Up" %>
@@ -73,69 +75,3 @@
 
 <% end %>
 
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
-
-<script>
-    function DrawCaptcha() {
-        var a = Math.ceil(Math.random() * 8) + '';
-        var b = Math.ceil(Math.random() * 8) + '';
-        var c = Math.ceil(Math.random() * 8) + '';
-        var d = Math.ceil(Math.random() * 8) + '';
-        var e = Math.ceil(Math.random() * 8) + '';
-        var f = Math.ceil(Math.random() * 8) + '';
-        var g = Math.ceil(Math.random() * 8) + '';
-        var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' ' + f;
-        document.getElementById("txtCaptcha").value = code
-    }
-    // Remove the spaces from the entered and generated code
-    function removeSpaces(string) {
-        return string.split(' ').join('');
-    }
-
-    $(function () {
-
-        $('#datepicker').datepicker({
-            dateFormat: 'dd-mm-yy',
-            changeMonth: true,
-            changeYear: true,
-            yearRange: "c-70:c"
-        });
-
-        $("#dialog").dialog();
-
-        DrawCaptcha();
-    });
-
-    function popup() {
-        cuteLittleWindow = window.open("/extra/privacy/", "littleWindow", "location=center,width=500,height=460");
-    }
-
-
-    function check() {
-        var cap = $("#txtCaptcha").val().replace(/\s+/g, "");
-        console.log(cap);
-        var inp = $.trim($("#txtInput").val());
-
-        if (cap != inp) {
-            document.getElementById("txtInput").setCustomValidity("Error in code Please Check AND TYPE AGAIN!");
-        } else {
-            document.getElementById("txtInput").setCustomValidity("");
-        }
-    }
-
-
-    $("#new_user").validate({
-        submitHandler: function (form) {
-            form.submit();
-        },
-        debug: true,
-        rules: {
-            "user[fname]": {required: true},
-            "user[lname]": {required: true},
-            "user[email]": {required: true, email: true},
-            "user[password]": {required: true, minlength: 6},
-            "#tc_Check": {required: true}
-
-        }
-    });
-</script>
