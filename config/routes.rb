@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :menus
 
   get 'reviews/restaurant_reviews' => "reviews#restaurant_reviews"
+  get 'reviews/item_reviews' => "reviews#item_reviews"
   resources :reviews
   get "/signin" => "sessions#new"
   get "/signout" => "sessions#destroy"

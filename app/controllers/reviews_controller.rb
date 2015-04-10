@@ -21,6 +21,14 @@ class ReviewsController < ApplicationController
   def edit
   end
 
+    def item_reviews
+
+    @item = Item.find(params[:id])
+    @review = Review.new
+    @review.item_id = @item.id
+
+  end
+
   def restaurant_reviews
     # @reviews = Review.where(:restaurant_id => params[:id])
 
@@ -36,11 +44,9 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = Review.new(review_params)
-    @review.restaurant_id = params[:review][:restaurant_id]
-    session[:res_id] = params[:review][:restaurant_id]
     @review.user_id = current_user.id
     @review.save
-    redirect_to reviews_restaurant_reviews_path
+    redirect_to reviews_item_reviews_path(:id => @review.item.id)
   end
 
   # PATCH/PUT /reviews/1
@@ -75,6 +81,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:review, :user_id, :restaurant_id)
+      params.require(:review).permit(:review, :user_id, :restaurant_id, :item_id)
     end
 end

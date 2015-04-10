@@ -3,22 +3,14 @@ class ItemsController < ApplicationController
 
   # GET /items
   # GET /items.json
-   def index
-    if params[:search]
-      @items = Item.search(params[:search]).order("created_at DESC")
+  def index
+    if params[:search_manufacturer].present? || params[:search_cateogyr].present?
+      @items = Item.search(params[:search_manufacturer], params[:search_cateogyr] ).order("created_at DESC")
 
     else
       @items = Item.order("created_at DESC")
     end
   end
-
-  def search
-  if params[:query]
-    @items = Item.search(params[:query])
-  else
-    @items = []
-  end
-end
 
   # GET /items/1
   # GET /items/1.json
@@ -82,6 +74,8 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:cateogyr, :manufacturer, :picture, :name)
+      params.require(:item).permit(:cateogyr, :manufacturer, :picture, :price, :name)
     end
 end
+
+

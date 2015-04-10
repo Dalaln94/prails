@@ -6,19 +6,26 @@
 <body>
 <%= form_tag(items_path, :method => "get", :class => "navbar-form", :id => "search-form") do %>
     <div class="input-append">
-      <%= text_field_tag :search, params[:search], :class => "span2", :placeholder => "Search ITEMS" %>
+      <%= text_field_tag :search_manufacturer, params[:search_manufacturer], :class => "span2", :placeholder => "Search Manufacturer" %>
+    </div>
+    <div class="input-append">
+      <%= text_field_tag :search_cateogyr, params[:search_cateogyr], :class => "span2", :placeholder => "Search Category" %>
 
       <input type="submit" id="search" value="Search"/>
     </div>
 <% end %>
 
+<%= yield %>
+</body>
+
 
 <table>
   <thead>
     <tr>
-      <th>Cateogyr</th>
+      <th>Category</th>
       <th>Manufacturer</th>
       <th>Picture</th>
+      <th>Price</th>
       <th>Name</th>
       <th colspan="3"></th>
     </tr>
@@ -30,7 +37,9 @@
         <td><%= item.cateogyr %></td>
         <td><%= item.manufacturer %></td>
         <td><%= item.picture %></td>
+        <td><%= item.price %></td>
         <td><%= item.name %></td>
+		<a href="/reviews/item_reviews?id=<%= item.id %>"><%= item.name %>'s reviews</a></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -42,3 +51,7 @@
 <br>
 
 <%= link_to 'New Item', new_item_path %>
+
+
+
+       
