@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150410201141) do
+ActiveRecord::Schema.define(version: 20150411105546) do
 
   create_table "bookings", force: true do |t|
     t.date     "bdateMade"
@@ -196,6 +196,7 @@ ActiveRecord::Schema.define(version: 20150410201141) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "item_id"
+    t.integer  "rate"
   end
 
   create_table "role_users", force: true do |t|

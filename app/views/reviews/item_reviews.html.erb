@@ -7,6 +7,9 @@
       <tr>
         <td><%= review.review %>&nbsp; &nbsp;&nbsp;&nbsp;</td> 
         <td><%= review.user.email %></td>
+		<td><%= review.rate %></td>
+
+		
         
       </tr>
     <% end %>
@@ -34,6 +37,13 @@
     <%= f.text_area :review %>
     <%= f.hidden_field :item_id, :value => @item.id %>
   </div>
+  
+  <div class="field">
+    <%= f.label :rate%><br>
+    <%= f.select :rate, ["1", "2", "3", "4", "5"] %>
+  </div>
+  
+  
 
   <div class="actions">
     <%= f.submit %>

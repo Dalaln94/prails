@@ -23,6 +23,11 @@
     <%= f.label :item_id %><br>
     <%= f.number_field :item_id %>
   </div>
+  
+    <div class="field">
+    <%= f.label :rate%><br>
+    <%= f.select :rate, ["1", "2", "3", "4", "5"] %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
