@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150411125607) do
+ActiveRecord::Schema.define(version: 20150411141719) do
 
   create_table "bookings", force: true do |t|
     t.date     "bdateMade"
@@ -167,6 +167,7 @@ ActiveRecord::Schema.define(version: 20150411125607) do
     t.string   "category"
     t.string   "manufacturer"
     t.string   "picture"
+    t.integer  "amount"
   end
 
   create_table "relationships", force: true do |t|

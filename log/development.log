@@ -60593,3 +60593,2750 @@ Processing by OrderItemsController#update as JS
   Rendered carts/_shopping_cart.html.erb (11.0ms)
   Rendered order_items/update.js.erb (32.0ms)
 Completed 200 OK in 50ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAmountToProduct (20150411141719)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (4.0ms)[0m  [1mALTER TABLE "products" ADD "amount" integer[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150411141719"]]
+  [1m[36m (13.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_bookings_on_user_id_and_restaurant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_bookings_on_user_id_and_restaurant_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_order_items_on_order_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_order_items_on_order_id' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_order_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_order_items_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_orders_on_order_status_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_orders_on_order_status_id' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_restaurants_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_restaurants_on_category_id' AND type='index'
+[0m
+
+
+Started GET "/products" for 127.0.0.1 at 2015-04-11 15:38:17 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (C:/Users/eureka/Final/railspp/appf/app/app/controllers/products_controller.rb:30: syntax error, unexpected tIDENTIFIER, expecting ')'
+product.save
+       ^):
+  app/controllers/products_controller.rb:30: syntax error, unexpected tIDENTIFIER, expecting ')'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (45.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (77.2ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-11 15:38:35 +0100
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 16 LIMIT 1[0m
+  [1m[35mRole Load (1.0ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "role_users" ON "roles"."id" = "role_users"."role_id" WHERE "role_users"."user_id" = ? LIMIT 1  [["user_id", 16]]
+  [1m[36mOrder Load (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mOrderItem Load (1.0ms)[0m  SELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered layouts/_cart_text.html.erb (109.4ms)
+Completed 200 OK in 1874ms (Views: 1834.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/simple-sidebar.css?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:37 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:38 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:38 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:38 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:38 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:38 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:38 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:38 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:38 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:38 +0100
+
+
+Started GET "/javascripts/rails.validations.js" for 127.0.0.1 at 2015-04-11 15:38:38 +0100
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/rails.validations.js"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.2) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (190.0ms)
+
+
+Started GET "/javascripts/rails.validations.js" for 127.0.0.1 at 2015-04-11 15:38:38 +0100
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/rails.validations.js"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.2) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (9.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (184.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:39 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:40 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:40 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:40 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:40 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:40 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 15:38:40 +0100
+
+
+Started GET "/products/" for 127.0.0.1 at 2015-04-11 15:38:41 +0100
+
+SyntaxError (C:/Users/eureka/Final/railspp/appf/app/app/controllers/products_controller.rb:30: syntax error, unexpected tIDENTIFIER, expecting ')'
+product.save
+       ^):
+  app/controllers/products_controller.rb:30: syntax error, unexpected tIDENTIFIER, expecting ')'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.1ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2015-04-11 15:39:13 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mOrder Load (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products"  WHERE "products"."active" = 't'
+  Rendered products/_product_row.html.erb (9.0ms)
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/_product_row.html.erb (0.0ms)
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/index.html.erb within layouts/application (34.4ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 16 LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "role_users" ON "roles"."id" = "role_users"."role_id" WHERE "role_users"."user_id" = ? LIMIT 1  [["user_id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mOrderItem Load (0.0ms)[0m  SELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered layouts/_cart_text.html.erb (11.0ms)
+Completed 200 OK in 1539ms (Views: 1457.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/simple-sidebar.css?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:15 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+
+Started GET "/javascripts/rails.validations.js" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/rails.validations.js"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.2) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (214.2ms)
+
+
+Started GET "/javascripts/rails.validations.js" for 127.0.0.1 at 2015-04-11 15:39:16 +0100
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/rails.validations.js"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.2) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (276.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:17 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:18 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:18 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:18 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:18 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:18 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:18 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:18 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:18 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:18 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:18 +0100
+
+
+Started GET "/products/" for 127.0.0.1 at 2015-04-11 15:39:20 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mOrder Load (1.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products"  WHERE "products"."active" = 't'
+  Rendered products/_product_row.html.erb (2.0ms)
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/_product_row.html.erb (0.0ms)
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/index.html.erb within layouts/application (18.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 16 LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "role_users" ON "roles"."id" = "role_users"."role_id" WHERE "role_users"."user_id" = ? LIMIT 1  [["user_id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mOrderItem Load (0.0ms)[0m  SELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered layouts/_cart_text.html.erb (6.9ms)
+Completed 200 OK in 1532ms (Views: 1522.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/simple-sidebar.css?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:22 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/javascripts/rails.validations.js" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/rails.validations.js"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.2) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (184.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:23 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:24 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:25 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:25 +0100
+
+
+Started GET "/products/new" for 127.0.0.1 at 2015-04-11 15:39:33 +0100
+Processing by ProductsController#new as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered products/_form.html.erb (9.0ms)
+  Rendered products/new.html.erb within layouts/application (12.8ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 16 LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "role_users" ON "roles"."id" = "role_users"."role_id" WHERE "role_users"."user_id" = ? LIMIT 1  [["user_id", 16]]
+  [1m[36mOrder Load (1.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mOrderItem Load (0.0ms)[0m  SELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered layouts/_cart_text.html.erb (8.7ms)
+Completed 200 OK in 1410ms (Views: 1404.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-11 15:39:34 +0100
+
+
+Started GET "/assets/simple-sidebar.css?body=1" for 127.0.0.1 at 2015-04-11 15:39:34 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+
+Started GET "/javascripts/rails.validations.js" for 127.0.0.1 at 2015-04-11 15:39:35 +0100
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/rails.validations.js"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.2) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (169.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:36 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:37 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:37 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:37 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:38 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:38 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:38 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:38 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:38 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:38 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:38 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:38 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 15:39:38 +0100
+
+
+Started POST "/products" for 127.0.0.1 at 2015-04-11 15:40:00 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h6ZJ24ZuNqxocFzfNJCAjyR1995feAPehKkI3bkXrUA=", "product"=>{"name"=>"fds", "price"=>"10", "manufacturer"=>"df", "category"=>"gd", "active"=>"true", "amount"=>"10"}, "commit"=>"Create Product"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.0ms)[0m  INSERT INTO "products" ("active", "amount", "category", "created_at", "manufacturer", "name", "price", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["active", "t"], ["amount", 10], ["category", "gd"], ["created_at", "2015-04-11 14:40:00.671636"], ["manufacturer", "df"], ["name", "fds"], ["price", 10.0], ["updated_at", "2015-04-11 14:40:00.671636"]]
+  [1m[36m (106.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/products/7
+Completed 302 Found in 125ms (ActiveRecord: 111.5ms)
+
+
+Started GET "/products/7" for 127.0.0.1 at 2015-04-11 15:40:00 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered products/show.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Name:</strong>
+    5:   <%= @product.name %>
+    6: </p>
+    7: 
+    8: <p>
+  app/views/products/show.html.erb:5:in `_app_views_products_show_html_erb___228704935_35536272'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-11 15:40:07 +0100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 16 LIMIT 1
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "role_users" ON "roles"."id" = "role_users"."role_id" WHERE "role_users"."user_id" = ? LIMIT 1[0m  [["user_id", 16]]
+  [1m[35mOrder Load (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mOrderItem Load (0.0ms)[0m  [1mSELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mProduct Load (1.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered layouts/_cart_text.html.erb (9.0ms)
+Completed 200 OK in 1435ms (Views: 1428.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-11 15:40:08 +0100
+
+
+Started GET "/assets/simple-sidebar.css?body=1" for 127.0.0.1 at 2015-04-11 15:40:08 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:08 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:08 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:08 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:09 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:10 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:10 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:10 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:10 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:10 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:10 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:10 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:10 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:10 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:10 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:10 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:10 +0100
+
+
+Started GET "/javascripts/rails.validations.js" for 127.0.0.1 at 2015-04-11 15:40:10 +0100
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/rails.validations.js"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.2) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (215.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:10 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:11 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:11 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:11 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:11 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:11 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:11 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:11 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:11 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:11 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:11 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:11 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:12 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:12 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:12 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:12 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:12 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:12 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:12 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:12 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:12 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:12 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:12 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:12 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:12 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:13 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:13 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:13 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:13 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:13 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:13 +0100
+
+
+Started GET "/products/" for 127.0.0.1 at 2015-04-11 15:40:13 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mOrder Load (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products"  WHERE "products"."active" = 't'[0m
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/_product_row.html.erb (1.0ms)
+  Rendered products/index.html.erb within layouts/application (25.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 16 LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "role_users" ON "roles"."id" = "role_users"."role_id" WHERE "role_users"."user_id" = ? LIMIT 1[0m  [["user_id", 16]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mOrderItem Load (0.0ms)[0m  [1mSELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered layouts/_cart_text.html.erb (8.3ms)
+Completed 200 OK in 1652ms (Views: 1643.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-11 15:40:15 +0100
+
+
+Started GET "/assets/simple-sidebar.css?body=1" for 127.0.0.1 at 2015-04-11 15:40:15 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:15 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:15 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:15 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:15 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:15 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:15 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:15 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:15 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:15 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:15 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:15 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:15 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+
+Started GET "/javascripts/rails.validations.js" for 127.0.0.1 at 2015-04-11 15:40:16 +0100
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/rails.validations.js"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.2) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (37.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (245.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:17 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:17 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:17 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:17 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:17 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:17 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:17 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:17 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:17 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:18 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:18 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:18 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:18 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:18 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:18 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:18 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:18 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:18 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:18 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:18 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:18 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:18 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:19 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:19 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:19 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:19 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:19 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:19 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:19 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:19 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 15:40:19 +0100
+
+
+Started GET "/products/new" for 127.0.0.1 at 2015-04-11 15:44:31 +0100
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered products/_form.html.erb (4.0ms)
+  Rendered products/new.html.erb within layouts/application (6.1ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 16 LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "role_users" ON "roles"."id" = "role_users"."role_id" WHERE "role_users"."user_id" = ? LIMIT 1[0m  [["user_id", 16]]
+  [1m[35mOrder Load (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mOrderItem Load (0.0ms)[0m  [1mSELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered layouts/_cart_text.html.erb (8.6ms)
+Completed 200 OK in 1517ms (Views: 1511.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/simple-sidebar.css?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:33 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/javascripts/rails.validations.js" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/rails.validations.js"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.2) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (199.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:34 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 15:44:35 +0100
+
+
+Started GET "/cart" for 127.0.0.1 at 2015-04-11 16:14:37 +0100
+Processing by CartsController#show as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mOrder Load (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mOrderItem Load (0.0ms)[0m  SELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered carts/_cart_row.html.erb (4.0ms)
+  Rendered carts/_shopping_cart.html.erb (33.8ms)
+  Rendered carts/show.html.erb within layouts/application (36.1ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 16 LIMIT 1
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT  "roles".* FROM "roles" INNER JOIN "role_users" ON "roles"."id" = "role_users"."role_id" WHERE "role_users"."user_id" = ? LIMIT 1[0m  [["user_id", 16]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered layouts/_cart_text.html.erb (7.7ms)
+Completed 200 OK in 1482ms (Views: 1441.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/simple-sidebar.css?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:39 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+
+Started GET "/javascripts/rails.validations.js" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/rails.validations.js"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.2) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (182.6ms)
+
+
+Started GET "/javascripts/rails.validations.js" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/rails.validations.js"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.2) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (175.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:40 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:41 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:42 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:42 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:42 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:42 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 16:14:42 +0100
+
+
+Started PATCH "/order_items/32" for 127.0.0.1 at 2015-04-11 16:14:46 +0100
+Processing by OrderItemsController#update as JS
+  Parameters: {"utf8"=>"✓", "order_item"=>{"quantity"=>"6", "product_id"=>"5"}, "commit"=>"Update Quantity", "id"=>"32"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mOrder Load (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mOrderItem Load (1.0ms)[0m  [1mSELECT  "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ? AND "order_items"."id" = ? LIMIT 1[0m  [["order_id", 2], ["id", 32]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSQL (4.1ms)[0m  UPDATE "order_items" SET "quantity" = ?, "total_price" = ?, "updated_at" = ? WHERE "order_items"."id" = 32  [["quantity", 6], ["total_price", 96.0], ["updated_at", "2015-04-11 15:14:46.776658"]]
+  [1m[36m (11.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mOrder Load (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mOrderItem Load (0.0ms)[0m  [1mSELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mProduct Load (1.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered layouts/_cart_text.html.erb (8.7ms)
+  [1m[36mCACHE (1.0ms)[0m  [1mSELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered carts/_cart_row.html.erb (3.0ms)
+  Rendered carts/_shopping_cart.html.erb (15.8ms)
+  Rendered order_items/update.js.erb (39.9ms)
+Completed 200 OK in 85ms (Views: 53.2ms | ActiveRecord: 18.2ms)
+
+
+Started PATCH "/order_items/32" for 127.0.0.1 at 2015-04-11 16:14:46 +0100
+Processing by OrderItemsController#update as JS
+  Parameters: {"utf8"=>"✓", "order_item"=>{"quantity"=>"6", "product_id"=>"5"}, "commit"=>"Update Quantity", "id"=>"32"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mOrder Load (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mOrderItem Load (1.0ms)[0m  SELECT  "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ? AND "order_items"."id" = ? LIMIT 1  [["order_id", 2], ["id", 32]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mOrderItem Load (0.0ms)[0m  [1mSELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered layouts/_cart_text.html.erb (7.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered carts/_cart_row.html.erb (2.0ms)
+  Rendered carts/_shopping_cart.html.erb (13.0ms)
+  Rendered order_items/update.js.erb (36.0ms)
+Completed 200 OK in 58ms (Views: 47.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/order_items" for 127.0.0.1 at 2015-04-11 16:15:03 +0100
+Processing by OrderItemsController#create as JS
+  Parameters: {"utf8"=>"✓", "order_item"=>{"quantity"=>"2", "product_id"=>"6"}, "commit"=>"Add to Cart"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mOrder Load (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.8ms)[0m  UPDATE "products" SET "amount" = ?, "updated_at" = ? WHERE "products"."id" = 6  [["amount", 9], ["updated_at", "2015-04-11 15:15:03.505553"]]
+  [1m[36m (12.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mOrderItem Load (0.0ms)[0m  SELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSQL (3.0ms)[0m  UPDATE "orders" SET "subtotal" = ?, "updated_at" = ? WHERE "orders"."id" = 2  [["subtotal", 296.0], ["updated_at", "2015-04-11 15:15:03.529063"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "order_items" ("created_at", "order_id", "product_id", "quantity", "total_price", "unit_price", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-04-11 15:15:03.535444"], ["order_id", 2], ["product_id", 6], ["quantity", 2], ["total_price", 200.0], ["unit_price", 100.0], ["updated_at", "2015-04-11 15:15:03.535444"]]
+  [1m[35m (14.0ms)[0m  commit transaction
+  [1m[36mOrder Load (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mOrderItem Load (0.0ms)[0m  SELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered layouts/_cart_text.html.erb (10.0ms)
+  Rendered order_items/create.js.erb (18.0ms)
+Completed 200 OK in 87ms (Views: 30.0ms | ActiveRecord: 37.4ms)
+
+
+Started POST "/order_items" for 127.0.0.1 at 2015-04-11 16:15:03 +0100
+Processing by OrderItemsController#create as JS
+  Parameters: {"utf8"=>"✓", "order_item"=>{"quantity"=>"2", "product_id"=>"6"}, "commit"=>"Add to Cart"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mOrder Load (0.0ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (3.0ms)[0m  [1mUPDATE "products" SET "amount" = ?, "updated_at" = ? WHERE "products"."id" = 6[0m  [["amount", 8], ["updated_at", "2015-04-11 15:15:03.608663"]]
+  [1m[35m (11.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mOrderItem Load (0.0ms)[0m  [1mSELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mSQL (4.0ms)[0m  UPDATE "orders" SET "subtotal" = ?, "updated_at" = ? WHERE "orders"."id" = 2  [["subtotal", 496.0], ["updated_at", "2015-04-11 15:15:03.635724"]]
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "order_items" ("created_at", "order_id", "product_id", "quantity", "total_price", "unit_price", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-04-11 15:15:03.642718"], ["order_id", 2], ["product_id", 6], ["quantity", 2], ["total_price", 200.0], ["unit_price", 100.0], ["updated_at", "2015-04-11 15:15:03.642718"]]
+  [1m[35m (11.9ms)[0m  commit transaction
+  [1m[36mOrder Load (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mOrderItem Load (0.0ms)[0m  SELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered layouts/_cart_text.html.erb (9.4ms)
+  Rendered order_items/create.js.erb (16.4ms)
+Completed 200 OK in 86ms (Views: 29.4ms | ActiveRecord: 32.9ms)
+
+
+Started GET "/cart" for 127.0.0.1 at 2015-04-11 16:15:10 +0100
+Processing by CartsController#show as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mOrder Load (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mOrderItem Load (0.0ms)[0m  [1mSELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?[0m  [["order_id", 2]]
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered carts/_cart_row.html.erb (2.0ms)
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered carts/_cart_row.html.erb (1.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered carts/_cart_row.html.erb (1.0ms)
+  Rendered carts/_shopping_cart.html.erb (20.9ms)
+  Rendered carts/show.html.erb within layouts/application (23.3ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 16 LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT  "roles".* FROM "roles" INNER JOIN "role_users" ON "roles"."id" = "role_users"."role_id" WHERE "role_users"."user_id" = ? LIMIT 1  [["user_id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "order_items".* FROM "order_items"  WHERE "order_items"."order_id" = ?  [["order_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."active" = 't' AND "products"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered layouts/_cart_text.html.erb (9.6ms)
+Completed 200 OK in 1453ms (Views: 1446.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-11 16:15:11 +0100
+
+
+Started GET "/assets/simple-sidebar.css?body=1" for 127.0.0.1 at 2015-04-11 16:15:11 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:11 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:11 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:11 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:12 +0100
+
+
+Started GET "/javascripts/rails.validations.js" for 127.0.0.1 at 2015-04-11 16:15:13 +0100
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/rails.validations.js"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.2) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (175.7ms)
+
+
+Started GET "/javascripts/rails.validations.js" for 127.0.0.1 at 2015-04-11 16:15:13 +0100
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/rails.validations.js"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine-1.0.3-x86 (mingw32) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.2) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.2) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (205.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:13 +0100
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:13 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:13 +0100
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:13 +0100
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:13 +0100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:13 +0100
+
+
+Started GET "/assets/bootstrap2.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:13 +0100
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:13 +0100
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:13 +0100
+
+
+Started GET "/assets/caterings.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:13 +0100
+
+
+Started GET "/assets/extra.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:13 +0100
+
+
+Started GET "/assets/items.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/jquery.placeholder.min.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/menu.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/modernizr.custom.63321.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/modernizr.custom.79639.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/moneyinfos.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/order_items.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/shopping_carts.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/jquery.validate.additional-methods.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-11 16:15:14 +0100
