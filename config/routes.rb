@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :items
 
-  resources :products, only: [:index]
+  resources :products
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
 
@@ -11,6 +11,16 @@ Rails.application.routes.draw do
   get 'order_items/update'
 
   get 'order_items/destroy'
+  
+   get 'products/create'
+   
+get 'products/show'
+
+get 'products/update'
+
+get 'products/destroy'
+
+get 'products/new'
 
   get 'carts/show'
 
@@ -62,6 +72,8 @@ Rails.application.routes.draw do
   get 'sessions/create'
 
   get 'sessions/destroy'
+  
+  
 
   resources :shopping_carts do
     collection do

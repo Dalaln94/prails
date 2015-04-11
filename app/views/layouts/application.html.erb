@@ -76,14 +76,14 @@
         </li>
 
         <li>
-          <a href="/items/">ITEMS</a>
+          <a href="/products/">ITEMS</a>
           <ul class="sub-menu"></ul>
         </li>
    
         <% if @current_user.present? %>
             <% if @current_user.admin? %>
                 <li>
-                  <%= link_to 'New Item', new_item_path %>
+                  <%= link_to 'New Item', new_product_path %>
                   <%= link_to 'Customers Details', users_path %>
                 </li>
             <% end %>
